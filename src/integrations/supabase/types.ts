@@ -907,6 +907,10 @@ export type Database = {
         Args: { user_uuid: string }
         Returns: boolean
       }
+      copy_user_avatars_to_global: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       is_admin: {
         Args: { user_uuid: string }
         Returns: boolean

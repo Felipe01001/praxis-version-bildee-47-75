@@ -34,7 +34,7 @@ export const useCustomIcons = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  // Fetch user's custom icons
+  // Fetch all custom icons (global access)
   const fetchCustomIcons = async () => {
     try {
       setLoading(true);
@@ -71,7 +71,7 @@ export const useCustomIcons = () => {
     }
   };
 
-  // Fetch uploaded icons
+  // Fetch all uploaded icons (global access)
   const fetchUploadedIcons = async () => {
     try {
       const { data, error } = await supabase

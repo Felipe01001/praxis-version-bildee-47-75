@@ -146,14 +146,17 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [currentStatusView, setCurrentStatusViewState] = useState<'cases' | 'tasks'>('cases');
   const [initialized, setInitialized] = useState(false);
 
-  // Load theme settings with improved error handling and consistency validation
+  // Load theme settings with global defaults
   useEffect(() => {
     const loadThemeSettings = async () => {
       try {
+        // First, load global default settings
+        loadGlobalDefaults();
+        
         const { data: { user } } = await supabase.auth.getUser();
         
         if (!user) {
-          // Load from localStorage if not authenticated
+          // Load from localStorage if not authenticated, but with global defaults as base
           loadFromLocalStorage();
           setInitialized(true);
           return;
@@ -167,11 +170,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
         if (error && error.code !== 'PGRST116') {
           console.error('Error loading theme settings:', error);
-          toast({
-            title: "Erro ao carregar configurações de tema",
-            description: "Usando configurações locais como fallback.",
-            variant: "destructive"
-          });
+          // Use global defaults with localStorage override
           loadFromLocalStorage();
           setInitialized(true);
           return;
@@ -179,28 +178,31 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
         if (profile?.theme_settings) {
           const settings = profile.theme_settings as ThemeSettings;
-          // Apply settings with validation
-          setHeaderColorState(settings.headerColor || '#8B9474');
+          // Apply user settings, but ensure all features are available
+          setHeaderColorState(settings.headerColor || '#838580');
           setAvatarColorState(settings.avatarColor || '#F5A65B');
-          setTextColorState(settings.textColor || 'text-white');
+          setTextColorState(settings.textColor || 'text-gray-800');
           setMainColorState(settings.mainColor || '#F3F4F6');
-          setButtonColorState(settings.buttonColor || '#8B9474');
-          setCaseStatusColorsState(settings.caseStatusColors || DEFAULT_CASE_STATUS_COLORS);
-          setTaskStatusColorsState(settings.taskStatusColors || DEFAULT_TASK_STATUS_COLORS);
+          setButtonColorState(settings.buttonColor || '#6CAE75');
+          setCaseStatusColorsState(settings.caseStatusColors || {
+            'open': '#61a0ff',
+            'completed': '#c2ff61'
+          });
+          setTaskStatusColorsState(settings.taskStatusColors || {
+            'in-progress': '#6da7fd',
+            'delayed': '#ff8785',
+            'completed': '#c0ff5c'
+          });
           
-          // Also save to localStorage for consistency
+          // Save to localStorage for consistency
           saveToLocalStorage(settings);
         } else {
+          // Apply global defaults
           loadFromLocalStorage();
         }
       } catch (error) {
         console.error('Error loading theme settings:', error);
-        toast({
-          title: "Erro no sistema de temas",
-          description: "Usando configurações padrão.",
-          variant: "destructive"
-        });
-        loadFromLocalStorage();
+        loadGlobalDefaults();
       }
       setInitialized(true);
     };
@@ -208,19 +210,46 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     loadThemeSettings();
   }, [toast]);
 
+  const loadGlobalDefaults = () => {
+    // Set enhanced global defaults for all users
+    setHeaderColorState('#838580');
+    setAvatarColorState('#F5A65B');
+    setTextColorState('text-gray-800');
+    setMainColorState('#F3F4F6');
+    setButtonColorState('#6CAE75');
+    setCaseStatusColorsState({
+      'open': '#61a0ff',
+      'completed': '#c2ff61'
+    });
+    setTaskStatusColorsState({
+      'in-progress': '#6da7fd',
+      'delayed': '#ff8785',
+      'completed': '#c0ff5c'
+    });
+    setCurrentStatusViewState('cases');
+  };
+
   const loadFromLocalStorage = () => {
-    setHeaderColorState(localStorage.getItem('praxis-header-color') || '#8B9474');
+    // Enhanced defaults from localStorage with global fallbacks
+    setHeaderColorState(localStorage.getItem('praxis-header-color') || '#838580');
     setAvatarColorState(localStorage.getItem('praxis-avatar-color') || '#F5A65B');
-    const storedHeaderColor = localStorage.getItem('praxis-header-color') || '#8B9474';
-    setTextColorState(isLightColor(storedHeaderColor) ? 'text-gray-800' : 'text-white');
+    const storedHeaderColor = localStorage.getItem('praxis-header-color') || '#838580';
+    setTextColorState(localStorage.getItem('praxis-text-color') || (isLightColor(storedHeaderColor) ? 'text-gray-800' : 'text-white'));
     setMainColorState(localStorage.getItem('praxis-main-color') || '#F3F4F6');
-    setButtonColorState(localStorage.getItem('praxis-button-color') || '#8B9474');
+    setButtonColorState(localStorage.getItem('praxis-button-color') || '#6CAE75');
     
     const storedCaseColors = localStorage.getItem('praxis-case-status-colors');
-    setCaseStatusColorsState(storedCaseColors ? JSON.parse(storedCaseColors) : DEFAULT_CASE_STATUS_COLORS);
+    setCaseStatusColorsState(storedCaseColors ? JSON.parse(storedCaseColors) : {
+      'open': '#61a0ff',
+      'completed': '#c2ff61'
+    });
     
     const storedTaskColors = localStorage.getItem('praxis-task-status-colors');
-    setTaskStatusColorsState(storedTaskColors ? JSON.parse(storedTaskColors) : DEFAULT_TASK_STATUS_COLORS);
+    setTaskStatusColorsState(storedTaskColors ? JSON.parse(storedTaskColors) : {
+      'in-progress': '#6da7fd',
+      'delayed': '#ff8785',
+      'completed': '#c0ff5c'
+    });
     
     setCurrentStatusViewState((localStorage.getItem('praxis-status-view') as 'cases' | 'tasks') || 'cases');
   };
