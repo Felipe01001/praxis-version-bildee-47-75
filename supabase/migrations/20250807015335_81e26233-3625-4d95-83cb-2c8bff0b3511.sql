@@ -1,0 +1,52 @@
+-- Inserir templates para JUIZADOS ESPECIAIS DA FAZENDA DO DF (20.1 - 20.28)
+INSERT INTO public.petition_templates (tema, subtema, titulo, ordem, descricao) VALUES
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF - servidor ATIVO – Exercícios financeiros não pagos', 'Ação contra GDF - Servidor Ativo - Exercícios Financeiros', '20.1', 'Ação para cobrança de exercícios financeiros não pagos a servidor ativo do GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA - Réu GDF - servidor INATIVO - Exercícios findos não pagos', 'Ação contra GDF - Servidor Inativo - Exercícios Findos', '20.2', 'Ação para cobrança de exercícios findos não pagos a servidor inativo do GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF - servidor ATIVO – Reconhecimento de gratificação', 'Ação contra GDF - Reconhecimento de Gratificação', '20.3', 'Ação para reconhecimento de gratificação de servidor ativo do GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – NÃO fornecimento de medicação – Ressarcimento', 'Ação contra GDF - Ressarcimento por Medicação', '20.4', 'Ação de ressarcimento por não fornecimento de medicação pelo GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – Saúde – CIRURGIA - Tutela de URGÊNCIA', 'Ação contra GDF - Cirurgia Urgente', '20.5', 'Ação com tutela de urgência para realização de cirurgia pelo GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – Saúde – EXAME - Tutela de URGÊNCIA', 'Ação contra GDF - Exame Urgente', '20.6', 'Ação com tutela de urgência para realização de exame pelo GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – Saúde – MEDICAMENTO - Tutela de URGÊNCIA', 'Ação contra GDF - Medicamento Urgente', '20.7', 'Ação com tutela de urgência para fornecimento de medicamento pelo GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – Saúde – TRATAMENTO - Tutela de URGÊNCIA', 'Ação contra GDF - Tratamento Urgente', '20.8', 'Ação com tutela de urgência para realização de tratamento pelo GDF'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF-DER–NOVACAP - BURACO NA PISTA – ressarcimento de custo', 'Ação contra GDF/DER/NOVACAP - Buraco na Pista', '20.9', 'Ação de ressarcimento por danos causados por buraco na pista'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF-NOVACAP – BURACO NA PISTA – ressarcimento de custo', 'Ação contra GDF/NOVACAP - Buraco na Pista', '20.10', 'Ação de ressarcimento por danos causados por buraco na pista'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF-DETRAN – BAIXA DE REGISTRO DE VEÍCULO – débitos de IPVA', 'Ação contra GDF/DETRAN - Baixa de Registro com Débitos IPVA', '20.11', 'Ação para baixa de registro de veículo com débitos de IPVA'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF-DETRAN – Venda de Veículo – NEGATIVA de PROPRIEDADE – Débitos de IPVA', 'Ação contra GDF/DETRAN - Negativa de Propriedade por IPVA', '20.12.0', 'Ação contra negativa de propriedade por débitos de IPVA'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – Venda de Veículo – Comunicado de venda - NEGATIVA de PROPRIEDADE', 'Ação contra DETRAN - Negativa de Propriedade após Comunicado', '20.12.1', 'Ação contra negativa de propriedade após comunicado de venda'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER - DETRAN – NULIDADE DE MULTA', 'Ação contra DER/DETRAN - Nulidade de Multa', '20.13', 'Ação de nulidade de multa aplicada pelo DER/DETRAN'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – NULIDADE DE MULTA', 'Ação contra DETRAN - Nulidade de Multa', '20.14', 'Ação de nulidade de multa aplicada pelo DETRAN'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER – NULIDADE DE MULTA', 'Ação contra DER - Nulidade de Multa', '20.15', 'Ação de nulidade de multa aplicada pelo DER'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER-DETRAN – NULIDADE DE MULTA – falta de NOTIFICAÇÃO', 'Ação contra DER/DETRAN - Nulidade por Falta de Notificação', '20.16', 'Ação de nulidade de multa por falta de notificação'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – NULIDADE DE MULTA – falta de NOTIFICAÇÃO', 'Ação contra DETRAN - Nulidade por Falta de Notificação', '20.17', 'Ação de nulidade de multa por falta de notificação'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER – NULIDADE DE MULTA – falta de NOTIFICAÇÃO', 'Ação contra DER - Nulidade por Falta de Notificação', '20.18', 'Ação de nulidade de multa por falta de notificação'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – BAIXA DE REGISTRO DE VEÍCULO', 'Ação contra DETRAN - Baixa de Registro de Veículo', '20.19', 'Ação para baixa de registro de veículo no DETRAN'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – CLONAGEM de PLACA – NULIDADE DE MULTA', 'Ação contra DETRAN - Nulidade por Clonagem de Placa', '20.20', 'Ação de nulidade de multa por clonagem de placa'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER-DETRAN – CNH - Transferência de PONTUAÇÃO', 'Ação contra DER/DETRAN - Transferência de Pontuação CNH', '20.21', 'Ação para transferência de pontuação de CNH'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DER – CNH - Transferência de PONTUAÇÃO', 'Ação contra DER - Transferência de Pontuação CNH', '20.22', 'Ação para transferência de pontuação de CNH'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – CNH - Transferência de PONTUAÇÃO', 'Ação contra DETRAN - Transferência de Pontuação CNH', '20.23', 'Ação para transferência de pontuação de CNH'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – CNH Definitiva – Negativa de RENOVAÇÃO', 'Ação contra DETRAN - Negativa de Renovação CNH', '20.24', 'Ação contra negativa de renovação de CNH definitiva'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – CNH Definitiva – inclusão EAR - demora de RENOVAÇÃO', 'Ação contra DETRAN - Demora Renovação CNH com EAR', '20.25', 'Ação por demora na renovação de CNH com inclusão de EAR'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DETRAN – CNH Provisória – Negativa da DEFINITIVA', 'Ação contra DETRAN - Negativa CNH Definitiva', '20.26', 'Ação contra negativa de emissão de CNH definitiva'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu DF-DETRAN – Venda de Veículo – NULIDADE de PROPRIEDADE - negativação indevida – DANOS MORAIS - tutela de urgência', 'Ação contra DETRAN - Negativação Indevida e Danos Morais', '20.27', 'Ação por negativação indevida e danos morais com tutela de urgência'),
+('JUIZADOS ESPECIAIS DA FAZENDA DO DF', 'FAZENDA – Réu GDF – Cidadão – Excesso de tributo – ITBI – restituição da diferença', 'Ação contra GDF - Restituição ITBI em Excesso', '20.28', 'Ação para restituição de excesso de ITBI pago');
+
+-- Inserir templates para AÇÕES CONTRA CAESB e CEB (21.1 - 21.10)
+INSERT INTO public.petition_templates (tema, subtema, titulo, ordem, descricao) VALUES
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – AUMENTO SUBSTANCIAL – CONTAS PAGAS - CAÇA-VAZAMENTOS - DEVOLUÇÃO EM DOBRO', 'Ação contra CAESB - Devolução em Dobro por Aumento Indevido', '21.1', 'Ação para devolução em dobro de valores pagos por aumento substancial indevido'),
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – AUMENTO SUBSTANCIAL - CONTAS NÃO PAGAS – CORTE DE ÁGUA - Tutela de Urgência', 'Ação contra CAESB - Tutela Urgente contra Corte', '21.2', 'Ação com tutela de urgência contra corte de água por aumento substancial'),
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – AUMENTO SUBSTANCIAL - CONTAS NÃO PAGAS – AMEAÇA DE CORTE - Tutela de Urgência', 'Ação contra CAESB - Tutela Urgente contra Ameaça de Corte', '21.3', 'Ação com tutela de urgência contra ameaça de corte por aumento substancial'),
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – MULTA INDEVIDA – CONTA PAGA - DEVOLUÇÃO EM DOBRO', 'Ação contra CAESB - Devolução em Dobro por Multa Indevida', '21.4', 'Ação para devolução em dobro de multa indevida já paga'),
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – MULTA INDEVIDA - CONTAS NÃO PAGAS – CORTE DE ÁGUA - Tutela de Urgência', 'Ação contra CAESB - Tutela Urgente contra Corte por Multa', '21.5', 'Ação com tutela de urgência contra corte por multa indevida'),
+('AÇÕES CONTRA CAESB e CEB', 'CAESB – MULTA INDEVIDA – CONTAS NÃO PAGAS – AMEAÇA DE CORTE - Tutela de Urgência', 'Ação contra CAESB - Tutela Urgente contra Ameaça por Multa', '21.6', 'Ação com tutela de urgência contra ameaça de corte por multa indevida'),
+('AÇÕES CONTRA CAESB e CEB', 'CEB – AUMENTO SUBSTANCIAL – CONTAS PAGAS – DEVOLUÇÃO EM DOBRO', 'Ação contra CEB - Devolução em Dobro por Aumento Indevido', '21.7', 'Ação para devolução em dobro por aumento substancial indevido na CEB'),
+('AÇÕES CONTRA CAESB e CEB', 'CEB – AUMENTO SUBSTANCIAL – CONTAS NÃO PAGAS – CORTE DE ENERGIA - Tutela de Urgência', 'Ação contra CEB - Tutela Urgente contra Corte de Energia', '21.8', 'Ação com tutela de urgência contra corte de energia por aumento substancial'),
+('AÇÕES CONTRA CAESB e CEB', 'CEB – AUMENTO SUBSTANCIAL – CONTAS NÃO PAGAS – AMEAÇA DE CORTE - Tutela de Urgência', 'Ação contra CEB - Tutela Urgente contra Ameaça de Corte', '21.9', 'Ação com tutela de urgência contra ameaça de corte de energia'),
+('AÇÕES CONTRA CAESB e CEB', 'CEB – Queda de ENERGIA – DANO EQUIPAMENTO ELÉTRICO - INDENIZAÇÃO', 'Ação contra CEB - Indenização por Dano em Equipamento', '21.10', 'Ação de indenização por danos em equipamento elétrico causado por queda de energia');
+
+-- Inserir template para COMPRA E VENDA ENTRE PARTICULARES (22.1)
+INSERT INTO public.petition_templates (tema, subtema, titulo, ordem, descricao) VALUES
+('COMPRA E VENDA ENTRE PARTICULARES', 'COMPRA E VENDA – falta de pagamento – rescisão de contrato – devolução do bem', 'Ação de Rescisão Contratual - Compra e Venda', '22.1', 'Ação de rescisão de contrato de compra e venda por falta de pagamento');
+
+-- Inserir template para CONSÓRCIO (23.1)
+INSERT INTO public.petition_templates (tema, subtema, titulo, ordem, descricao) VALUES
+('CONSÓRCIO', 'CONSÓRCIO – Desistência Contratual – RESTITUIÇÃO dos valores pagos', 'Ação contra Consórcio - Restituição por Desistência', '23.1', 'Ação para restituição de valores pagos em consórcio por desistência contratual');
